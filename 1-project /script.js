@@ -7,7 +7,7 @@ const btnEl=document.querySelectorAll(".button")
     
 // }
 
-console.log(hash)
+// console.log(hash)
 btnEl.forEach((item)=>{
     let hashValue="0123456789ABCDEF"
 let hash="#"
