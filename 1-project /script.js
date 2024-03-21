@@ -1,5 +1,5 @@
 const btnEl=document.querySelectorAll(".button")
-
+const body=document.querySelector("body")
 function randomIdGenerate(){
     let hashValue="0123456789ABCDEF"
     let hash="#"
@@ -11,11 +11,19 @@ function randomIdGenerate(){
 console.log(randomIdGenerate())
 function uniqueIDgenerated(){
     btnEl.forEach((item)=>{
+
+        const setID = randomIdGenerate()
+        item.setAttribute("id",setID)
+        item.style.backgroundColor = setID;
+        item.addEventListener("click",function(e){
+        console.log("clicked"+setID)
      
-        item.setAttribute("id",randomIdGenerate())
-        console.log(item)
+            const bgColor = e.target.style.backgroundColor;
+            body.style.backgroundColor = bgColor;
+       })
+        
     })
+    
    
 }
-
-console.log(uniqueIDgenerated())
+uniqueIDgenerated()
